@@ -24,10 +24,6 @@ spec:
         name: workload
         securityContext:
           runAsUser: 0
-        resources:
-          limits:
-            gpu.intel.com/i915: "1"
-            squat.ai/video: "1"
       serviceAccountName: default
 ---
 apiVersion: v1
