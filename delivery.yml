@@ -2,34 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: computer-vision-inferencing-app
-  annotations:
-    kapp.k14s.io/update-strategy: fallback-on-replace
-    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
-    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     app.kubernetes.io/part-of: openvino_notebooks
-    apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: server
-    app.kubernetes.io/component: run
-    carto.run/workload-name: computer-vision-inferencing-app
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/component: run
       app.kubernetes.io/part-of: openvino_notebooks
-      apps.tanzu.vmware.com/has-tests: "true"
-      apps.tanzu.vmware.com/workload-type: server
-      carto.run/workload-name: computer-vision-inferencing-app
   template:
     metadata:
       labels:
-        app.kubernetes.io/component: run
         app.kubernetes.io/part-of: openvino_notebooks
     spec:
       containers:
       - env:
         - name: VIDEO_INPUT
-          value: 0
+          value: "0"
         - name: ACCELERATION_DEVICE
           value: GPU
         - name: AMQP_HOSTNAME
