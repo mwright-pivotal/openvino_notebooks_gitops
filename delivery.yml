@@ -25,6 +25,9 @@ spec:
         name: workload
         securityContext:
           runAsUser: 0
+        resources:
+          limits:
+            squat.ai/serial: "1"
       serviceAccountName: default
 ---
 apiVersion: v1
