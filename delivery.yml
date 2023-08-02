@@ -28,6 +28,7 @@ spec:
         resources:
           limits:
             squat.ai/serial: "1"
+            squat.ai/video: "1"
       serviceAccountName: default
 ---
 apiVersion: v1
