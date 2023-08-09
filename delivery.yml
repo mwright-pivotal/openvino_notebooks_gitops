@@ -19,7 +19,7 @@ spec:
         - name: VIDEO_INPUT
           value: "0"
         - name: ACCELERATION_DEVICE
-          value: GPU
+          value: CPU
         - name: AMQP_HOSTNAME
           valueFrom:
             secretKeyRef:
