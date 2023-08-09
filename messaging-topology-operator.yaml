@@ -4,6 +4,7 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.12.0
   name: bindings.rabbitmq.com
+  namespace: rabbitmq-system
 spec:
   group: rabbitmq.com
   names:
