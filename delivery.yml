@@ -44,7 +44,7 @@ spec:
               name: edge-inferencing-events-default-user
               key: password
               optional: true
-        image: mwrightpivotal/openvino_notebooks:ovdev
+        image: mwrightpivotal/openvino_notebooks:v1.0
         imagePullPolicy: Always
         name: workload
         securityContext:
