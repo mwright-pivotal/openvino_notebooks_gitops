@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blackjack
+  name: blackjack-frontend
   namespace: default
   labels:
     app.kubernetes.io/part-of: blackjack
