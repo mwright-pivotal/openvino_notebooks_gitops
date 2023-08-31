@@ -58,10 +58,11 @@ metadata:
   name: binding
   namespace: default
 spec:
-  vhost: edge-vhost # default to '/' if not provided
+  vhost: "/edge-vhost" # default to '/' if not provided
   source: cv-exchange # an existing exchange
   destination: cv-txns # an existing queue or exchange
   destinationType: queue # can be 'queue' or 'exchange'
+  routingKey: "inference-type"
   rabbitmqClusterReference:
     name: edge-inferencing-events # rabbitmqCluster must exist in the same namespace as this resource
 ---
