@@ -50,7 +50,7 @@ spec:
           runAsUser: 0
         resources:
           limits:
-            squat.ai/serial: "0"
+            gpu.intel.com/i915: "1"
             squat.ai/video: "0"
       serviceAccountName: default
 ---
