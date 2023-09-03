@@ -1,0 +1,11 @@
+apiVersion: vmoperator.vmware.com/v1alpha1
+kind: VirtualMachine
+metadata:
+  name: keswick-worker
+  namespace: keswick-system
+spec:
+  className: guaranteed-large
+  imageName: keswick-wrkr.ova
+  powerState: poweredOff
+  vmMetadata:
+    transport: CloudInit
