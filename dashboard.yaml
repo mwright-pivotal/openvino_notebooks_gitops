@@ -42,6 +42,10 @@ spec:
     - port: 443
       targetPort: 8443
       nodePort: 30443
+    - name: http
+      port: 80
+      targetPort: 9090
+      nodePort: 30090
   selector:
     k8s-app: kubernetes-dashboard
 
@@ -197,6 +201,8 @@ spec:
           ports:
             - containerPort: 8443
               protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
           args:
             - --enable-skip-login
             - --namespace=kubernetes-dashboard
@@ -215,9 +221,9 @@ spec:
               name: tmp-volume
           livenessProbe:
             httpGet:
-              scheme: HTTPS
+              scheme: HTTP
               path: /
-              port: 8443
+              port: 9090
             initialDelaySeconds: 30
             timeoutSeconds: 30
           securityContext:
