@@ -7,4 +7,5 @@ kind: Secret
 metadata:
   creationTimestamp: null
   name: webhook-server-cert
+  namespace: rabbitmq-system
 type: kubernetes.io/tls
