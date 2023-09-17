@@ -51,7 +51,6 @@ spec:
         resources:
           limits:
             gpu.intel.com/i915: "1"
-            squat.ai/video: "0"
       serviceAccountName: default
 ---
 apiVersion: v1
