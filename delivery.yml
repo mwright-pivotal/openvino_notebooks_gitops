@@ -44,7 +44,7 @@ spec:
               name: edge-inferencing-events-default-user
               key: password
               optional: true
-        image: mwrightpivotal/openvino_notebooks:v2.1
+        image: mwrightpivotal/openvino_notebooks:ovrun
         name: workload
         securityContext:
           runAsUser: 0
