@@ -48,9 +48,6 @@ spec:
         name: workload
         securityContext:
           runAsUser: 0
-        resources:
-          limits:
-            gpu.intel.com/i915: "1"
       serviceAccountName: default
 ---
 apiVersion: v1
@@ -63,10 +60,9 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/part-of: openvino_notebooks
-  type: NodePort
+  type: LoadBalancer
   ports:
   - targetPort: 8888
     port: 8888
     name: http
-    nodePort: 30008
 
