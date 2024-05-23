@@ -1,7 +1,8 @@
+# Example of how to change the default kubernetes worker node configuration to provide more memory or CPUs
 apiVersion: vmoperator.vmware.com/v1alpha1
 kind: VirtualMachineClass
 metadata:
-  name: with-intel-gpu
+  name: best-effort-ec-small
   # No resource requests/reservations.
   # Memory overcommit possible.
 spec:
@@ -9,7 +10,7 @@ spec:
   # is different so addition of controllerName attr with invalid
   # value makes vm operator ignore this VM CRD instance.
   # This is majorly done because vm operator doesn't have all the
-  # needed capabilities to deploy keswick worker vm.
+  # needed capabilities to deploy ec worker vm.
   controllerName: vmoperator.vmware.com/ecworker
   hardware:
     cpus: 4
@@ -18,7 +19,6 @@ spec:
       dynamicDirectPathIODevices:
       - vendorID: 0x8086
         deviceID: 0x9a49
----
 ---
 apiVersion: v1
 kind: Namespace
