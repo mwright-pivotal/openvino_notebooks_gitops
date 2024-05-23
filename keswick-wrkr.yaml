@@ -10,28 +10,29 @@ spec:
   # value makes vm operator ignore this VM CRD instance.
   # This is majorly done because vm operator doesn't have all the
   # needed capabilities to deploy keswick worker vm.
-  controllerName: vmoperator.vmware.com/keswickworker
+  controllerName: vmoperator.vmware.com/ecworker
   hardware:
     cpus: 4
-    memory: 8Gi
+    memory: 16Gi
     devices:
       dynamicDirectPathIODevices:
       - vendorID: 0x8086
         deviceID: 0x9a49
 ---
+---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: keswick-system
+  name: ec-system
 ---
 apiVersion: vmoperator.vmware.com/v1alpha1
 kind: VirtualMachine
 metadata:
-  name: keswick-worker
-  namespace: keswick-system
+  name: ec-worker
+  namespace: ec-system
 spec:
-  className: with-intel-gpu
-  imageName: keswick-wrkr.ova
+  className: best-effort-ec-small
+  imageName: ec-wrkr.ova
   powerState: poweredOff
   vmMetadata:
     transport: CloudInit
